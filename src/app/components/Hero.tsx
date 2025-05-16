@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -7,11 +8,17 @@ import {
   FaLinkedin,
   FaTwitter,
 } from "react-icons/fa";
+import { motion } from "framer-motion";
+import { fadeInUp, scaleIn } from "@/utils/animations";
 const Hero = () => {
   return (
     <section className="py-28 container mx-w-7xl mx-auto px-4">
       <div className="max-w-3xl mx-auto text-center">
-        <div className="flex flex-col items-center mb-4">
+        <motion.div
+          {...scaleIn}
+          transition={{ delay: 0.4 }}
+          className="flex flex-col items-center mb-4"
+        >
           <Image
             src="/profile.jpg"
             alt="profile"
@@ -19,15 +26,27 @@ const Hero = () => {
             height={100}
             className="rounded-full mb-4 w-32 h-32 object-cover ring-2 ring-primary"
           />
-        </div>
+        </motion.div>
 
-        <h1 className="text-4xl font-bold leading-tight tracking-tight text-gray-900 md:text-5xl dark:text-white mb-6">
+        <motion.h1
+          {...fadeInUp}
+          transition={{ delay: 0.5 }}
+          className="text-4xl font-bold leading-tight tracking-tight text-gray-900 md:text-5xl dark:text-white mb-6"
+        >
           Hi, I'm <span className="text-primary">Boluwatife Osineye</span>
-        </h1>
-        <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-8">
+        </motion.h1>
+        <motion.p
+          {...fadeInUp}
+          transition={{ delay: 0.7 }}
+          className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-8"
+        >
           Full Stack Developer | React Native Enthusiast
-        </p>
-        <div className="flex justify-center space-x-4 mb-8">
+        </motion.p>
+        <motion.div
+          {...fadeInUp}
+          transition={{ delay: 0.9 }}
+          className="flex justify-center space-x-4 mb-8"
+        >
           <Link
             href={"https://github.com/heistifeh"}
             target="_blank"
@@ -49,7 +68,7 @@ const Hero = () => {
           >
             <FaTwitter />
           </Link>
-        </div>
+        </motion.div>
         <div className="flex flex-col md:flex-row justify-center gap-4">
           <Link
             href={"/projects"}

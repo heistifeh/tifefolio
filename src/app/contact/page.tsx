@@ -3,7 +3,13 @@
 import Link from "next/link";
 import { useState } from "react";
 import { FaEnvelope, FaMapMarkerAlt, FaPhone } from "react-icons/fa";
-
+import { motion } from "framer-motion";
+import {
+  fadeInUp,
+  fadeIn,
+  slideInLeft,
+  slideInRight,
+} from "@/utils/animations";
 interface formData {
   name: string;
   email: string;
@@ -55,19 +61,37 @@ const ContactPage = () => {
   };
   return (
     <div className="container max-w-5xl mx-auto py-20">
-      <h1 className="text-4xl font-bold mb-20 text-center ">Contact Me</h1>
+      <motion.h1
+        {...fadeInUp}
+        className="text-4xl font-bold mb-20 text-center "
+      >
+        Contact Me
+      </motion.h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         {/* contact info */}
-        <div className="space-y-8">
-          <h2 className="text-2xl font-semibold mb-4">Get in Touch</h2>
-          <p className="text-gray-600 dark:text-gray-300">
-            I'm always open to discussing new projects, creative ideas, or
-            opportunities to be part of your vision. If you have any questions
-            or just want to say hi, feel free to reach out!
-          </p>
-          <div>
-            <div className="flex items-center gap-4">
+        <motion.div {...slideInLeft} className="space-y-8">
+          <motion.div {...fadeInUp}>
+            <h2 className="text-2xl font-semibold mb-4">Get in Touch</h2>
+            <p className="text-gray-600 dark:text-gray-300">
+              I'm always open to discussing new projects, creative ideas, or
+              opportunities to be part of your vision. If you have any questions
+              or just want to say hi, feel free to reach out!
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="space-y-4"
+            variants={fadeIn}
+            initial="initial"
+            animate="animate"
+          >
+            <motion.div
+              variants={fadeInUp}
+              whileHover={{ x: 10 }}
+              transition={{ type: "spring", stiffness: 300 }}
+              className="flex items-center gap-4"
+            >
               <FaEnvelope className="w-6 h-6  text-primary" />
 
               <div>
@@ -79,8 +103,13 @@ const ContactPage = () => {
                   boluwatifeosineye26@gmail.com
                 </Link>
               </div>
-            </div>
-            <div className="flex items-center gap-4">
+            </motion.div>
+            <motion.div
+              variants={fadeInUp}
+              whileHover={{ x: 10 }}
+              transition={{ type: "spring", stiffness: 300 }}
+              className="flex items-center gap-4"
+            >
               <FaPhone className="w-6 h-6  text-primary" />
 
               <div>
@@ -92,8 +121,13 @@ const ContactPage = () => {
                   +2348050668634
                 </Link>
               </div>
-            </div>
-            <div className="flex items-center gap-4">
+            </motion.div>
+            <motion.div
+              variants={fadeInUp}
+              whileHover={{ x: 10 }}
+              transition={{ type: "spring", stiffness: 300 }}
+              className="flex items-center gap-4"
+            >
               <FaMapMarkerAlt className="w-6 h-6  text-primary" />
 
               <div>
@@ -102,14 +136,23 @@ const ContactPage = () => {
                   Lagos, Nigeria.
                 </p>
               </div>
-            </div>
-          </div>
-        </div>
+            </motion.div>
+          </motion.div>
+        </motion.div>
 
         {/* contact form */}
-        <div className="bg-white dark:bg-dark/50 p-6 rounded-lg shadow-md">
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div>
+        <motion.div
+          {...slideInRight}
+          className="bg-white dark:bg-dark/50 p-6 rounded-lg shadow-md"
+        >
+          <motion.form
+            onSubmit={handleSubmit}
+            className="space-y-6"
+            variants={fadeIn}
+            initial="initial"
+            animate="animate"
+          >
+            <motion.div variants={fadeInUp}>
               <label htmlFor="name" className="block text-sm font-medium mb-2">
                 Name
               </label>
@@ -122,8 +165,8 @@ const ContactPage = () => {
                 required
                 placeholder="Enter your name"
               />
-            </div>
-            <div>
+            </motion.div>
+            <motion.div variants={fadeInUp}>
               <label htmlFor="email" className="block text-sm font-medium mb-2">
                 Email
               </label>
@@ -136,9 +179,9 @@ const ContactPage = () => {
                 required
                 placeholder="Enter your email"
               />
-            </div>
+            </motion.div>
 
-            <div>
+            <motion.div variants={fadeInUp}>
               <label
                 htmlFor="message"
                 className="block text-sm font-medium mb-2"
@@ -154,24 +197,38 @@ const ContactPage = () => {
                 placeholder="Enter your message"
                 rows={4}
               ></textarea>
-            </div>
+            </motion.div>
 
-            <button type="submit" className="btn btn-primary w-full ">
+            <motion.button
+              type="submit"
+              className="btn btn-primary w-full "
+              disabled={status === "loading"}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
               {/* Change button text based on status */}
               {status === "loading" ? "Sending..." : "Send Message"}
-            </button>
+            </motion.button>
             {status === "success" && (
-              <p className="text-green-500 text-center">
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="text-green-500 text-center"
+              >
                 Message sent successfully!
-              </p>
+              </motion.p>
             )}
             {status === "error" && (
-              <p className="text-red-500 text-center">
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="text-red-500 text-center"
+              >
                 Error sending message. Please try again.
-              </p>
+              </motion.p>
             )}
-          </form>
-        </div>
+          </motion.form>
+        </motion.div>
       </div>
     </div>
   );

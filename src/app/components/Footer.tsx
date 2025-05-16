@@ -11,7 +11,9 @@ const Footer = () => {
             <Link href="/" className="text-xl font-bold text-primary">
               TifeFolio&trade;
             </Link>
-            <p>C {new Date().getFullYear()} TifeFolio. All rights reserved</p>
+            <p>
+              &copy; {new Date().getFullYear()} TifeFolio. All rights reserved
+            </p>
           </div>
           <div className="flex  space-x-6 ">
             <Link
