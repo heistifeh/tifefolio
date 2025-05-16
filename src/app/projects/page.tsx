@@ -34,7 +34,9 @@ const Projects = () => {
             </p>
             <div className="flex flex-wrap gap-2 mb-4 cursor-pointer">
               {project.technologies.map((tech) => (
-                <span className="px-3 py-1 bg-primary/10 ">{tech}</span>
+                <span className="px-3 py-1 bg-primary/10 " key={tech}>
+                  {tech}
+                </span>
               ))}
             </div>
             <div className="flex gap-4 mt-2">

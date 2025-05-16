@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import Image from "next/image";
 import { projects } from "../contents/projects";
@@ -55,6 +55,7 @@ const Projects = () => {
             <div className="flex flex-wrap gap-2 mb-4 cursor-pointer">
               {project.technologies.map((tech) => (
                 <motion.span
+                  key={tech}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                   className="px-3 py-1 bg-primary/10 "

@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import { projects } from "../contents/projects";
 import { blogs } from "../contents/blogs";
 import Link from "next/link";
 import { FaCalendarAlt, FaClock } from "react-icons/fa";

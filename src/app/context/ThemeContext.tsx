@@ -5,8 +5,6 @@ interface ThemeContextType {
   toggleTheme: () => void;
   setTheme: (theme: Theme) => void;
 }
-
-import { init } from "next/dist/compiled/webpack/webpack";
 import React, { createContext, useContext, useEffect, useState } from "react";
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);

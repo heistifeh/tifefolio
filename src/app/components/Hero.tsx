@@ -4,7 +4,6 @@ import Link from "next/link";
 import React from "react";
 import {
   FaGithub,
-  FaGithubSquare,
   FaLinkedin,
   FaTwitter,
 } from "react-icons/fa";
@@ -33,7 +32,7 @@ const Hero = () => {
           transition={{ delay: 0.5 }}
           className="text-4xl font-bold leading-tight tracking-tight text-gray-900 md:text-5xl dark:text-white mb-6"
         >
-          Hi, I'm <span className="text-primary">Boluwatife Osineye</span>
+          Hi, I&apos;m <span className="text-primary">Boluwatife Osineye</span>
         </motion.h1>
         <motion.p
           {...fadeInUp}

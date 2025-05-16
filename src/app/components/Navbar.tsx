@@ -13,7 +13,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
 
-  const { theme, setTheme, toggleTheme } = useTheme();
+  const { theme, toggleTheme } = useTheme();
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen((prev) => !prev);
   };

@@ -74,7 +74,7 @@ const ContactPage = () => {
           <motion.div {...fadeInUp}>
             <h2 className="text-2xl font-semibold mb-4">Get in Touch</h2>
             <p className="text-gray-600 dark:text-gray-300">
-              I'm always open to discussing new projects, creative ideas, or
+              I&apos;m always open to discussing new projects, creative ideas, or
               opportunities to be part of your vision. If you have any questions
               or just want to say hi, feel free to reach out!
             </p>
