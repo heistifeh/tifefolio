@@ -1,0 +1,25 @@
+//go to nextjs.org
+//copy command and paste in terminal
+//project name since we already added a folder should be "."
+// yes to all except the import question
+
+//install react icons,go to hero icons and copy command, framer motion
+//npm install @heroicons/react, framer-motion, react-icons
+.....................................
+
+-provide types for dummy data used
+-export types and use in each file of dummies
+-start taking care of page navigations
+
+..........................................
+ROUTING
+-create a folder under src i.e contact
+-create a file names "page.tsx/js"
+---it automatically routes it to contact i.e localhost:3000/contact (based on the folder name)
+
+SHORTCUT:
+-create new file under src
+-type the folder plus page i.e contact/page.tsx.
+
+STARTING UP:
+-remove all except tailwind in global.css
