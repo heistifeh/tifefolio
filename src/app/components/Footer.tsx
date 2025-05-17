@@ -12,7 +12,7 @@ const Footer = () => {
               TifeFolio&trade;
             </Link>
             <p>
-              &copy; {new Date().getFullYear()} TifeFolio. All rights reserved
+              &copy; {new Date().getFullYear()} TifeFolio. All rights reserved.
             </p>
           </div>
           <div className="flex  space-x-6 ">
@@ -24,14 +24,16 @@ const Footer = () => {
               <FaGithub />
             </Link>
             <Link
-              href={"https://github.com/heistifeh"}
+              href={
+                "https://www.linkedin.com/in/boluwatife-osineye-43b628269?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+              }
               target="_blank"
               className="text-2xl text-gray-600 hover:text-primary dark:text-gray-300 transition-colors duration-300"
             >
               <FaLinkedin />
             </Link>
             <Link
-              href={"https://github.com/heistifeh"}
+              href={"https://x.com/erenyeargerr?s=21"}
               target="_blank"
               className="text-2xl text-gray-600 hover:text-primary dark:text-gray-300 transition-colors duration-300"
             >

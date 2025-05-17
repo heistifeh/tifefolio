@@ -24,9 +24,12 @@ const About = () => {
       {/* Bio Section */}
       <motion.section {...fadeInDown} className="mb-16">
         <p className="text-lg text-secondary max-w-3xl mx-auto text-center">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa
-          explicabo optio corporis numquam facere iusto aperiam quo autem
-          officiis delectus.
+          I&apos;m a full-stack developer skilled in React, Node.js, Express, and
+          MongoDB, with a knack for building clean, responsive interfaces using
+          Tailwind CSS. I&apos;ve built everything from real estate platforms to
+          live voting and banking apps. I enjoy turning ideas into functional
+          products and solving real-world problems with code. If there is one
+          thing to know me-- I&apos;m always curious hence always learning.
         </p>
       </motion.section>
 
@@ -113,8 +116,18 @@ const About = () => {
             <p className="text-primary mb-2">Sabi Programmers | 2024 - 2025</p>
             <ul className="text-secondary space-y-2 list-disc list-inside">
               <li>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Officiis, voluptatem!
+                Mentored beginners in frontend web development, simplifying
+                complex concepts into beginner-friendly lessons and helping them
+                build their first projects.
+              </li>
+              <li>
+                Delivered private, in-depth web development classes tailored to
+                individual learning goals and career paths.
+              </li>
+              <li>
+                Collaborated with a cross-functional team to build the Sabi
+                E-Voting App, a real-time voting platform showcased at the
+                company&apos;s inaugural tech event.
               </li>
             </ul>
           </motion.div>

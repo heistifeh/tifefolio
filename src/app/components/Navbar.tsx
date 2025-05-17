@@ -73,7 +73,7 @@ const Navbar = () => {
           <motion.button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-white hover:text-primary cursor-pointer"
+            className="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-gray-700 dark:text-white hover:text-primary cursor-pointer"
             onClick={toggleMobileMenu}
           >
             {isMobileMenuOpen ? (
@@ -102,7 +102,6 @@ const Navbar = () => {
                     className="block py-2 hover:text-primary transition-colors"
                     onClick={toggleMobileMenu}
                   >
-                    {" "}
                     {item.label}
                   </Link>
                 ))}

@@ -1,68 +1,66 @@
 import { Projects } from "@/types";
 
 export const projects: Projects[] = [
-    {
-        title: 'E-commerce Platform',
-        description: 'A full-stack e-commerce platform built with Next.js, TypeScript, and Tailwind CSS.',
-        technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Stripe'],
-        githubLink: 'https://github.com',
-        demoLink: 'https://demo.com',
-        image: '/projects/e-commerce-website.png',
-      },
-      {
-        title: 'Task Management App',
-        description: 'A collaborative task management application with real-time updates.',
-        technologies: ['React', 'Node.js', 'MongoDB', 'Socket.io'],
-        githubLink: 'https://github.com',
-        demoLink: 'https://demo.com',
-        image: '/projects/task-manager.webp',
-      },
-      {
-        title: 'Portfolio Website',
-        description: 'My personal portfolio website showcasing my projects and skills.',
-        technologies: ['Next.js', 'Tailwind CSS', 'Framer Motion'],
-        githubLink: 'https://github.com',
-        demoLink: 'https://demo.com',
-        image: '/projects/portfolio-website.jpg',
-      },
-      {
-        title: 'Blog Platform',
-        description: 'A blogging platform with user authentication and markdown support.',
-        technologies: ['Gatsby', 'GraphQL', 'Contentful'],
-        githubLink: 'https://github.com',
-        demoLink: 'https://demo.com',
-        image: '/projects/blog-website.jpeg',
-      },
-      {
-        title: 'Weather App',
-        description: 'A weather application that provides real-time weather updates.',
-        technologies: ['React', 'OpenWeatherMap API'],
-        githubLink: 'https://github.com',
-        demoLink: 'https://demo.com',
-        image: '/projects/weather-app.png',
-      },
-      {
-        title: 'Chat Application',
-        description: 'A real-time chat application using WebSocket technology.',
-        technologies: ['React', 'Node.js', 'Socket.io'],
-        githubLink: 'https://github.com',
-        demoLink: 'https://demo.com',
-        image: '/projects/chat-app.png',
-      },
-      {
-        title: 'Recipe Finder',
-        description: 'A recipe search application using the Edamam API.',
-        technologies: ['React', 'Edamam API'],
-        githubLink: 'https://github.com',
-        demoLink: 'https://demo.com',
-        image: '/projects/recipe-finder.png',
-      },
-      {
-        title: 'Expense Tracker',
-        description: 'A personal finance tracker to manage expenses and income.',
-        technologies: ['React', 'Firebase'],
-        githubLink: 'https://github.com',
-        demoLink: 'https://demo.com',
-        image: '/projects/expense-tracker.webp',
-      }
-  ];
+  {
+    title: "Real Estate Web Application",
+    description:
+      "A full-stack real estate platform for listing, searching, and managing properties. Built with React, Express.js, Node.js, and MongoDB, with Firebase for authentication and Tailwind CSS for responsive design.",
+    technologies: [
+      "React",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Firebase",
+      "Tailwind CSS",
+    ],
+    githubLink: "https://github.com/heistifeh/mern-estate.git",
+    demoLink: "https://mern-estate-heht.onrender.com/",
+    image: "/projects/estate-project.jpg",
+  },
+  {
+    title: "Live Voting App",
+    description:
+      "A real-time voting system that allows users to create polls, cast votes, and see live results with an intuitive interface and responsive design.",
+    technologies: ["React", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
+    githubLink: "https://github.com/Techtees/blogx.git",
+    demoLink: "https://sabi-evote.vercel.app/",
+    image: "/projects/voting-app-project.jpg",
+  },
+  {
+    title: "Portfolio Website",
+    description:
+      "My personal portfolio website showcasing my projects and skills.",
+    technologies: ["React", "Tailwind CSS", "Framer Motion"],
+    githubLink: "https://github.com/heistifeh/portfolio2024.git",
+    demoLink: "https://portfolio2024-gamma-eight.vercel.app/",
+    image: "/projects/portfolio-project.jpg",
+  },
+
+  {
+    title: "Banking Website",
+    description:
+      "A responsive informational website for a digital bank, featuring sections for services, FAQs, customer onboarding, and contact. Designed to guide new users and support existing customers with a clean, user-friendly layout.",
+    technologies: ["HTML5", "CSS3", "JavaScript"],
+    githubLink: "https://github.com/heistifeh/Bankist-Website.git", // replace with actual repo
+    demoLink: "https://bankist-website-theta-five.vercel.app/", // replace with actual demo
+    image: "/projects/bank-website-project.jpg",
+  },
+  {
+    title: "Expense Tracker",
+    description: "A personal finance tracker to manage expenses and income.",
+    technologies: ["React", "Firebase"],
+    githubLink: "https://github.com",
+    demoLink: "https://demo.com",
+    image: "/projects/expense-tracker.webp",
+  },
+
+  {
+    title: "Banking Web Application",
+    description:
+      "An interactive banking interface with features like fund transfers, withdrawals, loan applications, savings tracking, and user authentication. Designed for simplicity and clarity in managing personal finances.",
+    technologies: ["HTML5", "CSS3", "JavaScript"],
+    githubLink: "https://github.com/heistifeh/Bankist-App.git",
+    demoLink: "https://bankist-app-sage.vercel.app/",
+    image: "/projects/bank-app-project.jpg ",
+  },
+];
