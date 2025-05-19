@@ -61,6 +61,6 @@ export const projects: Projects[] = [
     technologies: ["HTML5", "CSS3", "JavaScript"],
     githubLink: "https://github.com/heistifeh/Bankist-App.git",
     demoLink: "https://bankist-app-sage.vercel.app/",
-    image: "/projects/bank-app-project.jpg ",
+    image: "/projects/bank-app-project.jpg",
   },
 ];
