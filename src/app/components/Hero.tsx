@@ -59,7 +59,7 @@ const Hero = () => {
             <FaLinkedin />
           </Link>
           <Link
-            href={"https://x.com/erenyeargerr?s=21"}
+            href={"https://x.com/tifethedev?s=21"}
             target="_blank"
             className="text-2xl text-gray-600 hover:text-primary dark:text-gray-300 transition-colors duration-300"
           >
