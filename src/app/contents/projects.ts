@@ -18,6 +18,24 @@ export const projects: Projects[] = [
     image: "/projects/estate-project.jpg",
   },
   {
+    title: "Cartify E-commerce",
+    description:
+      "A full-stack e-commerce platform with modern UI/UX, real-time CMS integration, secure authentication, live product updates, and seamless Stripe-powered checkout. Features include product search, category browsing, cart management, sales & coupon functionality, and an admin-friendly Sanity Studio with real-time visual editing.",
+    technologies: [
+      "Next.js",
+      "Tailwind CSS",
+      "Sanity.io",
+      "Clerk",
+      "Shadcn/ui",
+      "Zustand",
+      "Stripe",
+      "Framer Motion",
+    ],
+    githubLink: "https://github.com/heistifeh/next-ecommerce", // Update if different
+    demoLink: "https://next-ecommerce-eta-nine.vercel.app/", // Update if different
+    image: "/projects/cartify.jpg", // Update based on your assets
+  },
+  {
     title: "Live Voting App",
     description:
       "A real-time voting system that allows users to create polls, cast votes, and see live results with an intuitive interface and responsive design.",
@@ -25,15 +43,6 @@ export const projects: Projects[] = [
     githubLink: "https://github.com/Techtees/blogx.git",
     demoLink: "https://sabi-evote.vercel.app/",
     image: "/projects/voting-app-project.jpg",
-  },
-  {
-    title: "Portfolio Website",
-    description:
-      "My personal portfolio website showcasing my projects and skills.",
-    technologies: ["React", "Tailwind CSS", "Framer Motion"],
-    githubLink: "https://github.com/heistifeh/portfolio2024.git",
-    demoLink: "https://portfolio2024-gamma-eight.vercel.app/",
-    image: "/projects/portfolio-project.jpg",
   },
 
   {
