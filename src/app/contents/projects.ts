@@ -45,23 +45,23 @@ export const projects: Projects[] = [
     image: "/projects/voting-app-project.jpg",
   },
 
-  {
-    title: "Banking Website",
-    description:
-      "A responsive informational website for a digital bank, featuring sections for services, FAQs, customer onboarding, and contact. Designed to guide new users and support existing customers with a clean, user-friendly layout.",
-    technologies: ["HTML5", "CSS3", "JavaScript"],
-    githubLink: "https://github.com/heistifeh/Bankist-Website.git", // replace with actual repo
-    demoLink: "https://bankist-website-theta-five.vercel.app/", // replace with actual demo
-    image: "/projects/bank-website-project.jpg",
-  },
-  {
-    title: "Expense Tracker",
-    description: "A personal finance tracker to manage expenses and income.",
-    technologies: ["React", "Firebase"],
-    githubLink: "https://github.com",
-    demoLink: "https://demo.com",
-    image: "/projects/expense-tracker.webp",
-  },
+  // {
+  //   title: "Banking Website",
+  //   description:
+  //     "A responsive informational website for a digital bank, featuring sections for services, FAQs, customer onboarding, and contact. Designed to guide new users and support existing customers with a clean, user-friendly layout.",
+  //   technologies: ["HTML5", "CSS3", "JavaScript"],
+  //   githubLink: "https://github.com/heistifeh/Bankist-Website.git", // replace with actual repo
+  //   demoLink: "https://bankist-website-theta-five.vercel.app/", // replace with actual demo
+  //   image: "/projects/bank-website-project.jpg",
+  // },
+  // {
+  //   title: "Expense Tracker",
+  //   description: "A personal finance tracker to manage expenses and income.",
+  //   technologies: ["React", "Firebase"],
+  //   githubLink: "https://github.com",
+  //   demoLink: "https://demo.com",
+  //   image: "/projects/expense-tracker.webp",
+  // },
 
   {
     title: "Banking Web Application",
