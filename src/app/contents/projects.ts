@@ -35,15 +35,7 @@ export const projects: Projects[] = [
     demoLink: "https://next-ecommerce-eta-nine.vercel.app/", // Update if different
     image: "/projects/cartify.jpg", // Update based on your assets
   },
-  {
-    title: "Live Voting App",
-    description:
-      "A real-time voting system that allows users to create polls, cast votes, and see live results with an intuitive interface and responsive design.",
-    technologies: ["React", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
-    githubLink: "https://github.com/Techtees/blogx.git",
-    demoLink: "https://sabi-evote.vercel.app/",
-    image: "/projects/voting-app-project.jpg",
-  },
+  
 
   // {
   //   title: "Banking Website",
@@ -62,14 +54,4 @@ export const projects: Projects[] = [
   //   demoLink: "https://demo.com",
   //   image: "/projects/expense-tracker.webp",
   // },
-
-  {
-    title: "Banking Web Application",
-    description:
-      "An interactive banking interface with features like fund transfers, withdrawals, loan applications, savings tracking, and user authentication. Designed for simplicity and clarity in managing personal finances.",
-    technologies: ["HTML5", "CSS3", "JavaScript"],
-    githubLink: "https://github.com/heistifeh/Bankist-App.git",
-    demoLink: "https://bankist-app-sage.vercel.app/",
-    image: "/projects/bank-app-project.jpg",
-  },
 ];
