@@ -1,94 +1,131 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { projects } from "../contents/projects";
 import Link from "next/link";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
-import { motion } from "framer-motion";
-import { fadeInUp, staggerContainer, cardHoverSmall } from "@/utils/animations";
+import { motion, AnimatePresence } from "framer-motion";
+import { fadeInUp } from "@/utils/animations";
+
 const Projects = () => {
+  const [current, setCurrent] = useState(0);
+  const project = projects[current];
+
+  const handleNext = () => {
+    setCurrent((prev) => (prev + 1) % projects.length);
+  };
+
+  const handlePrev = () => {
+    setCurrent((prev) => (prev - 1 + projects.length) % projects.length);
+  };
+
   return (
-    <section className="py-20 container max-w-7xl mx-auto px-4">
-      <motion.h2 className="text-3xl font-bold mb-12 text-center" {...fadeInUp}>
+    <section className="py-20 container max-w-6xl mx-auto px-4">
+      <motion.h2
+        className="text-4xl font-bold mb-12 text-center"
+        {...fadeInUp}
+      >
         Featured Projects
       </motion.h2>
 
-      {/* cards */}
-
-      <motion.div
-        className="grid grid-cols-1 md:grid-cols-3 gap-8"
-        variants={staggerContainer}
-        initial="initial"
-        animate="animate"
-      >
-        {projects.map((project) => (
-          <motion.article
-            variants={fadeInUp}
-            {...cardHoverSmall}
+      {/* Showcase container */}
+      <div className="relative flex flex-col md:flex-row items-center gap-10">
+        <AnimatePresence mode="wait">
+          <motion.div
             key={project.title}
-            className="bg-white dark:bg-dark/50 rounded-lg shadow-md p-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.5 }}
+            className="flex flex-col md:flex-row gap-8 w-full items-center"
           >
-            <div className="relative aspect-video mb-4 rounded-lg overflow-hidden">
-              <Image
-                src={project.image}
-                alt={project.title}
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33w"
-              />
-            </div>
-            <motion.h3
-              whileHover={{ x: 5 }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="text-xl font-semibold mb-2"
-            >
-              {project.title}
-            </motion.h3>
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.2 }}
-              className="text-gray-600 dark:text-gray-300 mb-4"
-            >
-              {project.description}
-            </motion.p>
-            <div className="flex flex-wrap gap-2 mb-4 cursor-pointer">
-              {project.technologies.map((tech) => (
-                <motion.span
-                  key={tech}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-3 py-1 bg-primary/10 "
+            {/* Image */}
+<div className="relative w-full md:w-1/2 flex justify-center items-center rounded-xl overflow-hidden shadow-lg bg-black/5">
+  <Image
+    src={project.image}
+    alt={project.title}
+    width={900}
+    height={600}
+    className="rounded-xl object-contain"
+    sizes="(max-width: 768px) 100vw, 50vw"
+    priority
+  />
+</div>
+
+
+            {/* Details */}
+            <div className="w-full md:w-1/2 space-y-5">
+              <h3 className="text-2xl md:text-3xl font-semibold">
+                {project.title}
+              </h3>
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                {project.description}
+              </p>
+
+              <div className="flex flex-wrap gap-2">
+                {project.technologies.map((tech) => (
+                  <motion.span
+                    key={tech}
+                    whileHover={{ scale: 1.05 }}
+                    className="px-3 py-1 bg-primary/10 rounded-md text-sm"
+                  >
+                    {tech}
+                  </motion.span>
+                ))}
+              </div>
+
+              <div className="flex gap-6 mt-6">
+                <Link
+                  href={project.githubLink}
+                  target="_blank"
+                  className="flex items-center gap-2 text-secondary hover:text-primary transition-colors"
                 >
-                  {tech}
-                </motion.span>
-              ))}
+                  <FaGithub className="w-5 h-5" />
+                  <span>Code</span>
+                </Link>
+                <Link
+                  href={project.demoLink}
+                  target="_blank"
+                  className="flex items-center gap-2 text-secondary hover:text-primary transition-colors"
+                >
+                  <FaExternalLinkAlt className="w-5 h-5" /> <span>Live Demo</span>
+                </Link>
+              </div>
             </div>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.4 }}
-              className="flex gap-4 mt-2"
-            >
-              <Link
-                href={project.githubLink}
-                target="_blank"
-                className="flex items-center gap-2 text-secondary hover:text-primary transition-colors cursor-pointer"
-              >
-                <FaGithub className="w-5 h-5" />
-                <span>Code</span>
-              </Link>
-              <Link
-                href={project.demoLink}
-                target="_blank"
-                className="flex items-center gap-2 text-secondary hover:text-primary transition-colors cursor-pointer"
-              >
-                <FaExternalLinkAlt className="w-5 h-5" /> <span>Live Demo</span>
-              </Link>
-            </motion.div>
-          </motion.article>
+          </motion.div>
+        </AnimatePresence>
+
+        {/* Navigation buttons */}
+        <div className="absolute top-1/2 left-0 transform -translate-y-1/2">
+          <button
+            onClick={handlePrev}
+            className="bg-primary/10 hover:bg-primary/20 transition-colors rounded-full p-3 ml-2"
+          >
+            ‹
+          </button>
+        </div>
+        <div className="absolute top-1/2 right-0 transform -translate-y-1/2">
+          <button
+            onClick={handleNext}
+            className="bg-primary/10 hover:bg-primary/20 transition-colors rounded-full p-3 mr-2"
+          >
+            ›
+          </button>
+        </div>
+      </div>
+
+      {/* Project indicator dots */}
+      <div className="flex justify-center mt-8 gap-2">
+        {projects.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrent(i)}
+            className={`h-3 w-3 rounded-full transition-all ${
+              i === current ? "bg-primary w-6" : "bg-gray-400/50"
+            }`}
+          />
         ))}
-      </motion.div>
+      </div>
     </section>
   );
 };
