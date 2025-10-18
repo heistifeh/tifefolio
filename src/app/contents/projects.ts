@@ -31,7 +31,7 @@ export const projects: Projects[] = [
     ],
     githubLink: "https://github.com/heistifeh/mern-estate.git",
     demoLink: "https://mern-estate-heht.onrender.com/",
-    image: "/projects/estate-project.jpg",
+    image: "/projects/estate-project.png",
   },
   {
     title: "Cartify E-commerce",
