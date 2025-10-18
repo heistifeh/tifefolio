@@ -2,6 +2,22 @@ import { Projects } from "@/types";
 
 export const projects: Projects[] = [
   {
+    title: "Monero Pay",
+    description:
+      "A full-stack crypto swap platform that allows users to exchange cryptocurrencies in real time. Includes live crypto price tracking for instant insights and an admin dashboard with full authentication to manage transactions securely. Built with Next.js and Supabase for a fast, scalable experience.",
+    technologies: [
+      "Next.js",
+      "Supabase",
+      "Tailwind CSS",
+      "TypeScript",
+      "Framer Motion",
+      "Shadcn/ui",
+    ],
+    githubLink: "https://github.com/heistifeh/monero-pay", // Replace with your actual repo
+    demoLink: "https://monero-pay.net/", // Replace with your live link
+    image: "/projects/monero.png", // Replace with your actual image
+  },
+  {
     title: "Real Estate Web Application",
     description:
       "A full-stack real estate platform for listing, searching, and managing properties. Built with React, Express.js, Node.js, and MongoDB, with Firebase for authentication and Tailwind CSS for responsive design.",
@@ -31,27 +47,9 @@ export const projects: Projects[] = [
       "Stripe",
       "Framer Motion",
     ],
-    githubLink: "https://github.com/heistifeh/next-ecommerce", // Update if different
-    demoLink: "https://next-ecommerce-eta-nine.vercel.app/", // Update if different
-    image: "/projects/cartify.jpg", // Update based on your assets
-  },
+    githubLink: "https://github.com/heistifeh/next-ecommerce",
+    demoLink: "https://next-ecommerce-eta-nine.vercel.app/",
+    image: "/projects/cartify.jpg",
+  }
   
-
-  // {
-  //   title: "Banking Website",
-  //   description:
-  //     "A responsive informational website for a digital bank, featuring sections for services, FAQs, customer onboarding, and contact. Designed to guide new users and support existing customers with a clean, user-friendly layout.",
-  //   technologies: ["HTML5", "CSS3", "JavaScript"],
-  //   githubLink: "https://github.com/heistifeh/Bankist-Website.git", // replace with actual repo
-  //   demoLink: "https://bankist-website-theta-five.vercel.app/", // replace with actual demo
-  //   image: "/projects/bank-website-project.jpg",
-  // },
-  // {
-  //   title: "Expense Tracker",
-  //   description: "A personal finance tracker to manage expenses and income.",
-  //   technologies: ["React", "Firebase"],
-  //   githubLink: "https://github.com",
-  //   demoLink: "https://demo.com",
-  //   image: "/projects/expense-tracker.webp",
-  // },
 ];
