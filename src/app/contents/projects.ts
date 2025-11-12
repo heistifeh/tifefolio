@@ -14,7 +14,7 @@ export const projects: Projects[] = [
       "Shadcn/ui",
     ],
     githubLink: "https://github.com/heistifeh/monero-pay", // Replace with your actual repo
-    demoLink: "https://monero-pay.net/", // Replace with your live link
+    demoLink: "https://moneropay.onrender.com/", // Replace with your live link
     image: "/projects/monero.png", // Replace with your actual image
   },
   {
