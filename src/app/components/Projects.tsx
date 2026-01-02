@@ -55,9 +55,14 @@ const Projects = () => {
 
             {/* Details */}
             <div className="w-full md:w-1/2 space-y-5">
-              <h3 className="text-2xl md:text-3xl font-semibold">
-                {project.title}
-              </h3>
+              <div className="flex flex-wrap items-center gap-3">
+                <h3 className="text-2xl md:text-3xl font-semibold">
+                  {project.title}
+                </h3>
+                <span className="text-xs uppercase tracking-wider px-2 py-1 rounded-full bg-primary/10 text-secondary">
+                  {project.category}
+                </span>
+              </div>
               <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                 {project.description}
               </p>
@@ -75,14 +80,16 @@ const Projects = () => {
               </div>
 
               <div className="flex gap-6 mt-6">
-                <Link
-                  href={project.githubLink}
-                  target="_blank"
-                  className="flex items-center gap-2 text-secondary hover:text-primary transition-colors"
-                >
-                  <FaGithub className="w-5 h-5" />
-                  <span>Code</span>
-                </Link>
+                {project.githubLink ? (
+                  <Link
+                    href={project.githubLink}
+                    target="_blank"
+                    className="flex items-center gap-2 text-secondary hover:text-primary transition-colors"
+                  >
+                    <FaGithub className="w-5 h-5" />
+                    <span>Code</span>
+                  </Link>
+                ) : null}
                 <Link
                   href={project.demoLink}
                   target="_blank"
@@ -96,18 +103,16 @@ const Projects = () => {
         </AnimatePresence>
 
         {/* Navigation buttons */}
-        <div className="absolute top-1/2 left-0 transform -translate-y-1/2">
+        <div className="absolute inset-y-0 left-0 right-0 flex items-center justify-between px-2 pointer-events-none">
           <button
             onClick={handlePrev}
-            className="bg-primary/10 hover:bg-primary/20 transition-colors rounded-full p-3 ml-2"
+            className="pointer-events-auto bg-white/80 dark:bg-dark/80 hover:bg-white transition-colors rounded-full p-3 shadow-md"
           >
             ‹
           </button>
-        </div>
-        <div className="absolute top-1/2 right-0 transform -translate-y-1/2">
           <button
             onClick={handleNext}
-            className="bg-primary/10 hover:bg-primary/20 transition-colors rounded-full p-3 mr-2"
+            className="pointer-events-auto bg-white/80 dark:bg-dark/80 hover:bg-white transition-colors rounded-full p-3 shadow-md"
           >
             ›
           </button>

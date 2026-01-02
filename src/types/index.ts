@@ -4,7 +4,8 @@ export interface Projects {
     technologies: string[],
     githubLink: string,
     demoLink: string,
-        image: string,
+    image: string,
+    category: "Mobile" | "Web",
 
 }
 

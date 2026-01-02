@@ -35,7 +35,7 @@ const Hero = () => {
           transition={{ delay: 0.7 }}
           className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-8"
         >
-          Full Stack Developer | React Native Enthusiast
+          Mobile App Developer | Full-Stack Developer
         </motion.p>
         <motion.div
           {...fadeInUp}
