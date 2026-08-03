@@ -1,14 +1,17 @@
-
 import Hero from "./components/Hero";
-import Projects from "./components/Projects";
-import Newsletter from "./components/Newsletter";
+import StackMarquee from "./components/StackMarquee";
+import FeaturedProjects from "./components/Projects";
+import Manifesto from "./components/Manifesto";
+import ContactCTA from "./components/ContactCTA";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <Projects />
-      <Newsletter />
+      <StackMarquee />
+      <FeaturedProjects />
+      <Manifesto />
+      <ContactCTA />
     </>
   );
 }

@@ -1,85 +1,121 @@
 "use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { motion } from "framer-motion";
-import { fadeInUp, scaleIn } from "@/utils/animations";
+import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
+import { HiArrowRight } from "react-icons/hi2";
+
+const socials = [
+  { href: "https://github.com/heistifeh", icon: FaGithub, label: "GitHub" },
+  {
+    href: "https://www.linkedin.com/in/boluwatife-osineye-43b628269",
+    icon: FaLinkedin,
+    label: "LinkedIn",
+  },
+  { href: "https://x.com/tifethedev", icon: FaXTwitter, label: "X / Twitter" },
+];
+
 const Hero = () => {
   return (
-    <section className="py-28 container mx-w-7xl mx-auto px-4">
-      <div className="max-w-3xl mx-auto text-center">
+    <section className="relative overflow-hidden pt-16 pb-24 md:pt-24 md:pb-32">
+      <div className="ambient-glow" />
+
+      <div className="shell relative z-10">
+        {/* Eyebrow */}
         <motion.div
-          {...scaleIn}
-          transition={{ delay: 0.4 }}
-          className="flex flex-col items-center mb-4"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="flex items-center gap-3"
         >
-          <Image
-            src="/profile.jpg"
-            alt="profile"
-            width={100}
-            height={100}
-            className="rounded-full mb-4 w-32 h-32 object-cover ring-2 ring-primary"
-          />
+          <span className="chip">
+            <span className="relative inline-flex h-1.5 w-1.5">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
+              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400" />
+            </span>
+            Open to freelance & full-time — 2026
+          </span>
         </motion.div>
 
+        {/* Heading */}
         <motion.h1
-          {...fadeInUp}
-          transition={{ delay: 0.5 }}
-          className="text-4xl font-bold leading-tight tracking-tight text-gray-900 md:text-5xl dark:text-white mb-6"
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, ease: [0.19, 1, 0.22, 1] }}
+          className="display mt-8 text-6xl md:text-8xl lg:text-[9.5rem]"
         >
-          Hi, I&apos;m <span className="text-primary">Boluwatife Osineye</span>
+          Building
+          <br />
+          mobile products
+          <br />
+          <span className="italic text-accent">that feel inevitable.</span>
         </motion.h1>
-        <motion.p
-          {...fadeInUp}
-          transition={{ delay: 0.7 }}
-          className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-8"
-        >
-          Mobile App Developer | Full-Stack Developer
-        </motion.p>
+
+        {/* Meta row */}
         <motion.div
-          {...fadeInUp}
-          transition={{ delay: 0.9 }}
-          className="flex justify-center space-x-4 mb-8"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 0.6 }}
+          className="mt-10 grid gap-8 md:grid-cols-[auto_1fr_auto] md:items-end"
         >
-          <Link
-            href={"https://github.com/heistifeh"}
-            target="_blank"
-            className="text-2xl text-gray-600 hover:text-primary dark:text-gray-300 transition-colors duration-300"
-          >
-            <FaGithub />
-          </Link>
-          <Link
-            href={
-              "https://www.linkedin.com/in/boluwatife-osineye-43b628269?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
-            }
-            target="_blank"
-            className="text-2xl text-gray-600 hover:text-primary dark:text-gray-300 transition-colors duration-300"
-          >
-            <FaLinkedin />
-          </Link>
-          <Link
-            href={"https://x.com/tifethedev?s=21"}
-            target="_blank"
-            className="text-2xl text-gray-600 hover:text-primary dark:text-gray-300 transition-colors duration-300"
-          >
-            <FaTwitter />
-          </Link>
+          <div className="flex items-center gap-4">
+            <div className="relative h-14 w-14 overflow-hidden rounded-full ring-1 ring-border">
+              <Image
+                src="/profile.jpg"
+                alt="Boluwatife Osineye"
+                fill
+                className="object-cover"
+                sizes="56px"
+                priority
+              />
+            </div>
+            <div className="text-sm">
+              <p className="text-fg">Boluwatife Osineye</p>
+              <p className="text-fg-muted">Mobile & Product Engineer · Lagos, NG</p>
+            </div>
+          </div>
+
+          <p className="max-w-lg text-base text-fg-muted md:justify-self-center md:text-center">
+            I design and engineer{" "}
+            <span className="text-fg">React Native</span> apps and the platforms
+            around them. Two apps live on the App Store; my PWA{" "}
+            <span className="text-fg">Fitnex</span> now serves 200+ users.
+          </p>
+
+          <div className="flex items-center gap-3 md:justify-self-end">
+            <Link href="/projects" className="btn btn-primary group">
+              View work
+              <HiArrowRight className="transition-transform group-hover:translate-x-0.5" />
+            </Link>
+            <Link href="/contact" className="btn btn-ghost">
+              Get in touch
+            </Link>
+          </div>
         </motion.div>
-        <div className="flex flex-col md:flex-row justify-center gap-4">
-          <Link
-            href={"/projects"}
-            className="bg-primary inline-block w-full md:w-auto text-white px-8 py-3 rounded-lg hover:bg-primary/80 transition-colors"
-          >
-            View Projects
-          </Link>
-          <Link
-            href={"/contact"}
-            className="bg-gray-500 inline-block w-full md:w-auto text-white px-8 py-3 rounded-lg hover:text-gray-800 hover:bg-gray-300 transition-colors"
-          >
-            Contact Me
-          </Link>
-        </div>
+
+        {/* Socials row */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.8, duration: 0.6 }}
+          className="mt-16 flex items-center justify-between border-t border-border pt-6"
+        >
+          <span className="eyebrow">Elsewhere</span>
+          <div className="flex items-center gap-5">
+            {socials.map(({ href, icon: Icon, label }) => (
+              <Link
+                key={label}
+                href={href}
+                target="_blank"
+                aria-label={label}
+                className="text-fg-muted hover:text-fg"
+              >
+                <Icon className="h-5 w-5" />
+              </Link>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,74 +1,141 @@
-import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
-import { projects } from "../contents/projects";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
+import { FaGithub } from "react-icons/fa6";
+import { HiArrowUpRight } from "react-icons/hi2";
+import { projects } from "../contents/projects";
+import ContactCTA from "../components/ContactCTA";
 
-const Projects = () => {
-  return (
-    <div className="container max-w-7xl mx-auto py-20">
-      <h1 className="text-4xl font-bold mb-4 text-center">
-        Mobile App Projects
-      </h1>
-      <p className="text-lg text-secondary mb-16 text-center max-w-3xl mx-auto">
-        I build reliable, production-ready mobile apps with React Native and
-        Expo, focusing on smooth UX, real-time data, and clean architecture.
-        Here are shipped apps and the supporting platforms I have delivered.
-      </p>
-      {/* cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {projects.map((project) => (
-          <article
-            key={project.title}
-            className="bg-white dark:bg-dark/50 rounded-lg shadow-md p-6"
-          >
-            <div className="relative aspect-video mb-4 rounded-lg overflow-hidden">
-              <Image
-                src={project.image}
-                alt={project.title}
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33w"
-              />
-            </div>
-            <div className="flex items-center gap-3 mb-2">
-              <h3 className="text-xl font-semibold">{project.title}</h3>
-              <span className="text-xs uppercase tracking-wider px-2 py-1 rounded-full bg-primary/10 text-secondary">
-                {project.category}
-              </span>
-            </div>
-            <p className="text-gray-600 dark:text-gray-300 mb-4">
-              {project.description}
-            </p>
-            <div className="flex flex-wrap gap-2 mb-4 cursor-pointer">
-              {project.technologies.map((tech) => (
-                <span className="px-3 py-1 bg-primary/10 " key={tech}>
-                  {tech}
-                </span>
-              ))}
-            </div>
-            <div className="flex gap-4 mt-2">
-              {project.githubLink ? (
-                <Link
-                  href={project.githubLink}
-                  target="_blank"
-                  className="flex items-center gap-2 text-secondary hover:text-primary transition-colors cursor-pointer"
-                >
-                  <FaGithub className="w-5 h-5" />
-                  <span>Code</span>
-                </Link>
-              ) : null}
-              <Link
-                href={project.demoLink}
-                target="_blank"
-                className="flex items-center gap-2 text-secondary hover:text-primary transition-colors cursor-pointer"
-              >
-                <FaExternalLinkAlt className="w-5 h-5" /> <span>Live Demo</span>
-              </Link>
-            </div>
-          </article>
-        ))}
-      </div>
-    </div>
-  );
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Work",
+  description:
+    "Selected mobile apps and platforms by Boluwatife Osineye — Insta-Delivery (customer + vendors), Fitnex PWA, and Cartify e-commerce.",
+  alternates: { canonical: "/projects" },
+  openGraph: {
+    title: "Work · Boluwatife Osineye",
+    description:
+      "Case studies of shipped mobile apps and web platforms — including two apps live on the App Store.",
+    url: "/projects",
+    type: "website",
+  },
 };
-export default Projects;
+
+export default function ProjectsPage() {
+  return (
+    <>
+      <section className="relative overflow-hidden pt-10 pb-16 md:pt-20 md:pb-24">
+        <div className="ambient-glow" />
+
+        <div className="shell relative z-10">
+          <span className="eyebrow">Work · 2022 — Present</span>
+          <h1 className="display mt-6 text-5xl md:text-8xl">
+            Selected <span className="italic text-accent">projects.</span>
+          </h1>
+          <p className="mt-8 max-w-2xl text-lg text-fg-muted">
+            A mix of shipped mobile apps and the web platforms around them.
+            Every one had users, deadlines, and a bar to clear.
+          </p>
+        </div>
+      </section>
+
+      <section className="pb-24 md:pb-32">
+        <div className="shell">
+          <ul className="divide-y divide-border border-y border-border">
+            {projects.map((project, idx) => (
+              <li key={project.title} className="group">
+                <div className="grid grid-cols-12 items-start gap-6 py-8 md:py-12">
+                  <div className="col-span-12 md:col-span-1">
+                    <span
+                      className="text-sm text-fg-subtle"
+                      style={{ fontFamily: "var(--font-mono)" }}
+                    >
+                      {String(idx + 1).padStart(2, "0")}
+                    </span>
+                  </div>
+
+                  <div className="col-span-12 md:col-span-4">
+                    <Link
+                      href={`/projects/${project.slug}`}
+                      className="block overflow-hidden rounded-xl border border-border bg-surface-2"
+                    >
+                      <div className="relative aspect-[4/3]">
+                        <Image
+                          src={project.image}
+                          alt={project.title}
+                          fill
+                          sizes="(max-width: 768px) 100vw, 33vw"
+                          className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                        />
+                      </div>
+                    </Link>
+                  </div>
+
+                  <div className="col-span-12 md:col-span-7">
+                    <div className="flex items-start justify-between gap-6">
+                      <div className="min-w-0">
+                        <div className="flex items-center gap-3">
+                          <Link href={`/projects/${project.slug}`}>
+                            <h2 className="text-2xl md:text-3xl font-medium tracking-tight hover:text-accent">
+                              {project.title}
+                            </h2>
+                          </Link>
+                          <span className="chip">
+                            {project.category === "Mobile" ? "◐ Mobile" : "◍ Web"}
+                          </span>
+                        </div>
+                        <p className="mt-4 max-w-2xl text-base text-fg-muted">
+                          {project.description}
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="mt-6 flex flex-wrap gap-2">
+                      {project.technologies.map((tech) => (
+                        <span
+                          key={tech}
+                          className="rounded-full border border-border px-2.5 py-1 text-[11px] text-fg-muted"
+                          style={{ fontFamily: "var(--font-mono)" }}
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+
+                    <div className="mt-6 flex flex-wrap items-center gap-4">
+                      <Link
+                        href={`/projects/${project.slug}`}
+                        className="btn btn-primary group/btn"
+                      >
+                        Read case study
+                        <HiArrowUpRight className="transition-transform group-hover/btn:-translate-y-0.5 group-hover/btn:translate-x-0.5" />
+                      </Link>
+                      <Link
+                        href={project.demoLink}
+                        target="_blank"
+                        className="btn btn-ghost"
+                      >
+                        {project.category === "Mobile" ? "App Store" : "Live site"}
+                      </Link>
+                      {project.githubLink && (
+                        <Link
+                          href={project.githubLink}
+                          target="_blank"
+                          className="btn btn-ghost"
+                        >
+                          <FaGithub /> Source
+                        </Link>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <ContactCTA />
+    </>
+  );
+}

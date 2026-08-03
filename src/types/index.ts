@@ -1,18 +1,17 @@
 export interface Projects {
-    title: string,
-    description: string,
-    technologies: string[],
-    githubLink: string,
-    demoLink: string,
-    image: string,
-    category: "Mobile" | "Web",
-
-}
-
-export interface Blogs{
-    title: string,
-    excerpt: string,
-    date: string,
-    readTime: string,
-    slug: string
+  slug: string;
+  title: string;
+  tagline: string;
+  description: string;
+  role: string;
+  period: string;
+  context: string;
+  responsibilities: string[];
+  highlights: string[];
+  outcomes: string[];
+  technologies: string[];
+  githubLink: string;
+  demoLink: string;
+  image: string;
+  category: "Mobile" | "Web";
 }

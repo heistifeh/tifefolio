@@ -1,172 +1,302 @@
-"use client";
-import React from "react";
-import { FaCode, FaGraduationCap, FaLaptopCode } from "react-icons/fa";
-import { motion } from "framer-motion";
-import {
-  fadeInUp,
-  fadeInDown,
-  fadeIn,
-  staggerContainer,
-  cardHover,
-  cardHoverSmall,
-} from "@/utils/animations";
+import Image from "next/image";
+import Link from "next/link";
+import { HiArrowUpRight } from "react-icons/hi2";
+import ContactCTA from "../components/ContactCTA";
 
-const About = () => {
-  return (
-    <div className="container max-w-7xl mx-auto py-12">
-      <motion.h1
-        {...fadeInDown}
-        className="text-4xl font-bold mb-8 text-center"
-      >
-        About Me
-      </motion.h1>
+import type { Metadata } from "next";
 
-      {/* Bio Section */}
-      <motion.section {...fadeInDown} className="mb-16">
-        <p className="text-lg text-secondary max-w-3xl mx-auto text-center">
-          I&apos;m a full-stack developer skilled in React, Node.js, Express, and
-          MongoDB, with a knack for building clean, responsive interfaces using
-          Tailwind CSS. I&apos;ve built everything from real estate platforms to
-          live voting and banking apps. I enjoy turning ideas into functional
-          products and solving real-world problems with code. If there is one
-          thing to know me-- I&apos;m always curious hence always learning.
-        </p>
-      </motion.section>
-
-      {/* skill section */}
-      <motion.section {...fadeIn} transition={{ delay: 0.2 }} className="mb-16">
-        <motion.h2 {...fadeInUp} className="section-title">
-          Skills
-        </motion.h2>
-
-        <motion.div
-          variants={staggerContainer}
-          initial="initial"
-          animate="animate"
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-        >
-          {/* frontend card */}
-          <motion.div
-            variants={fadeInUp}
-            {...cardHover}
-            className="bg-white dark:bg-dark/50 rounded-lg shadow-md p-6"
-          >
-            <FaCode className="h-8 w-8 text-primary mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Frontend</h3>
-            <ul>
-              <li>React / Next.js</li>
-              <li>TypeScript</li>
-              <li>JavaScript</li>
-              <li>Tailwind CSS</li>
-              <li>Framer Motion</li>
-              <li>HTML5 / CSS3</li>
-            </ul>
-          </motion.div>
-          {/* backend card */}
-          <motion.div
-            variants={fadeInUp}
-            {...cardHover}
-            className="bg-white dark:bg-dark/50 rounded-lg shadow-md p-6"
-          >
-            <FaLaptopCode className="h-8 w-8 text-primary mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Backend</h3>
-            <ul>
-              <li>Node.js</li>
-              <li>Express.js</li>
-              <li>MongoDB</li>
-            </ul>
-          </motion.div>
-          {/* Others card */}
-          <motion.div
-            variants={fadeInUp}
-            {...cardHover}
-            className="bg-white dark:bg-dark/50 rounded-lg shadow-md p-6"
-          >
-            <FaGraduationCap className="h-8 w-8 text-primary mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Tools & Others</h3>
-            <ul>
-              <li>Git / GitHub</li>
-              <li>Insomnia </li>
-              <li>Postman</li>
-              <li>MailTrap</li>
-              <li>Figma</li>
-            </ul>
-          </motion.div>
-        </motion.div>
-      </motion.section>
-
-      {/* experience section */}
-      <motion.section {...fadeIn} transition={{ delay: 0.4 }} className="mb-16">
-        <motion.h2 {...fadeInUp} className="section-title">
-          Experience
-        </motion.h2>
-
-        <motion.div
-          variants={staggerContainer}
-          initial="initial"
-          animate="animate"
-          className="max-w-3xl mx-auto space-y-8"
-        >
-          <motion.div
-            variants={fadeInUp}
-            {...cardHoverSmall}
-            className="bg-white dark:bg-dark/50 p-6 rounded-lg shadow-md"
-          >
-            <h3 className="text-xl font-semibold mb-2">Frontend Engineer</h3>
-            <p className="text-primary mb-2">Sabi Programmers | 2024 - 2025</p>
-            <ul className="text-secondary space-y-2 list-disc list-inside">
-              <li>
-                Mentored beginners in frontend web development, simplifying
-                complex concepts into beginner-friendly lessons and helping them
-                build their first projects.
-              </li>
-              <li>
-                Delivered private, in-depth web development classes tailored to
-                individual learning goals and career paths.
-              </li>
-              <li>
-                Collaborated with a cross-functional team to build the Sabi
-                E-Voting App, a real-time voting platform showcased at the
-                company&apos;s inaugural tech event.
-              </li>
-            </ul>
-          </motion.div>
-        </motion.div>
-      </motion.section>
-
-      {/* education section */}
-      <motion.section {...fadeIn} transition={{ delay: 0.6 }} className="mb-16">
-        <motion.h2 {...fadeInUp} className="section-title">
-          Education
-        </motion.h2>
-
-        <motion.div
-          variants={staggerContainer}
-          initial="initial"
-          animate="animate"
-          className="max-w-3xl mx-auto space-y-8"
-        >
-          <motion.div
-            variants={fadeInUp}
-            {...cardHoverSmall}
-            className="bg-white dark:bg-dark/50 p-6 rounded-lg shadow-md"
-          >
-            <h3 className="text-xl font-semibold mb-2">
-              Bachelor of Science and Education in Computer Science
-            </h3>
-            <p className="text-primary mb-2">
-              University of Ilorin | 2018 - 2023
-            </p>
-
-            <p className="text-secondary mb-2">
-              Graduated with honors, Focused and software engineering, web and
-              app development.
-            </p>
-          </motion.div>
-        </motion.div>
-      </motion.section>
-    </div>
-  );
+export const metadata: Metadata = {
+  title: "About",
+  description:
+    "Boluwatife Osineye — mobile & product engineer based in Lagos. Background, principles, tech stack, and experience.",
+  alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About · Boluwatife Osineye",
+    description:
+      "Mobile & product engineer building React Native, Expo, and Next.js products.",
+    url: "/about",
+    type: "profile",
+  },
 };
 
-export default About;
+const stack = {
+  Mobile: ["React Native", "Expo", "Reanimated", "TypeScript", "Native modules"],
+  Web: ["Next.js", "React 19", "Tailwind CSS", "Framer Motion", "GraphQL"],
+  Backend: ["Node.js", "Express", "Supabase", "MongoDB", "Firebase", "REST / WebSockets"],
+  Tooling: ["Git", "EAS", "Figma", "Sentry", "Postman"],
+};
+
+const experience = [
+  {
+    company: "Insta-Delivery",
+    role: "Mobile Engineer",
+    period: "2024 — Jul 2025",
+    location: "Remote · Lagos",
+    summary:
+      "Shipped and maintained the customer and vendor mobile apps that powered the platform's day-to-day. Both apps live on the App Store.",
+    tags: ["React Native", "Expo", "TypeScript", "Realtime"],
+  },
+  {
+    company: "Sabi Programmers",
+    role: "Frontend Engineer & Mentor",
+    period: "2024 — 2025",
+    location: "Lagos, NG",
+    summary:
+      "Shipped the Sabi E-Voting platform used at a public tech event, and privately mentored beginners into their first paid engineering roles.",
+    tags: ["React", "Node.js", "Realtime", "Mentorship"],
+  },
+];
+
+const principles = [
+  {
+    title: "Ship small, ship often.",
+    body: "Momentum compounds. I bias toward tight iterations users can actually feel.",
+  },
+  {
+    title: "Native-feeling always.",
+    body: "60fps, correct haptics, considered gestures. Mobile is felt before it is understood.",
+  },
+  {
+    title: "Empty states are UX.",
+    body: "The 5% edge cases are where product love lives — and where lazy work shows.",
+  },
+];
+
+export default function AboutPage() {
+  return (
+    <>
+      {/* Header */}
+      <section className="relative overflow-hidden pt-10 pb-16 md:pt-20 md:pb-24">
+        <div className="ambient-glow" />
+        <div className="shell relative z-10 grid gap-12 md:grid-cols-12 md:items-end">
+          <div className="md:col-span-8">
+            <span className="eyebrow">About · Boluwatife Osineye</span>
+            <h1 className="display mt-6 text-5xl md:text-8xl">
+              Engineer, <br />
+              <span className="italic text-accent">quietly obsessive.</span>
+            </h1>
+          </div>
+          <div className="md:col-span-4">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-border">
+              <Image
+                src="/profile.jpg"
+                alt="Boluwatife Osineye"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 33vw"
+                priority
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Bio */}
+      <section className="py-16 md:py-24">
+        <div className="shell grid gap-12 md:grid-cols-12">
+          <div className="md:col-span-4">
+            <span className="eyebrow">01 — Background</span>
+          </div>
+          <div className="md:col-span-8 space-y-6 text-lg md:text-xl leading-relaxed text-fg-muted">
+            <p>
+              I&rsquo;m a mobile & product engineer based in Lagos. I build
+              apps and the platforms around them — mostly with{" "}
+              <span className="text-fg">React Native</span>,{" "}
+              <span className="text-fg">Expo</span>, and{" "}
+              <span className="text-fg">TypeScript</span>.
+            </p>
+            <p>
+              After graduating in Computer Science from the University of
+              Ilorin, I got obsessed with UI and never really recovered. Along
+              the way I&rsquo;ve shipped two apps to the App Store, launched{" "}
+              <span className="text-fg">Fitnex</span> — a workout tracker now
+              used by 200+ lifters — and mentored a handful of engineers into
+              their first paid roles.
+            </p>
+            <p>
+              Most of my work sits at the intersection of{" "}
+              <span className="text-fg">product</span> and{" "}
+              <span className="text-fg">engineering</span> — writing the code,
+              but also worrying about the empty state, the loading skeleton,
+              and whether the button feels good under a thumb.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div className="shell"><div className="divider" /></div>
+
+      {/* Principles */}
+      <section className="py-16 md:py-24">
+        <div className="shell grid gap-12 md:grid-cols-12">
+          <div className="md:col-span-4">
+            <span className="eyebrow">02 — Principles</span>
+            <h2 className="display mt-4 text-3xl md:text-4xl">
+              How I <span className="italic text-accent">work.</span>
+            </h2>
+          </div>
+          <div className="md:col-span-8 grid gap-6 sm:grid-cols-1">
+            {principles.map((p, i) => (
+              <div key={p.title} className="grid grid-cols-[auto_1fr] gap-6 border-t border-border pt-6">
+                <span
+                  className="text-sm text-fg-subtle pt-1"
+                  style={{ fontFamily: "var(--font-mono)" }}
+                >
+                  0{i + 1}
+                </span>
+                <div>
+                  <h3 className="text-xl md:text-2xl font-medium tracking-tight">
+                    {p.title}
+                  </h3>
+                  <p className="mt-2 text-fg-muted">{p.body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <div className="shell"><div className="divider" /></div>
+
+      {/* Stack */}
+      <section className="py-16 md:py-24">
+        <div className="shell grid gap-12 md:grid-cols-12">
+          <div className="md:col-span-4">
+            <span className="eyebrow">03 — Stack</span>
+            <h2 className="display mt-4 text-3xl md:text-4xl">
+              Tools of the <span className="italic text-accent">trade.</span>
+            </h2>
+          </div>
+          <div className="md:col-span-8 grid gap-8 sm:grid-cols-2">
+            {Object.entries(stack).map(([group, items]) => (
+              <div key={group} className="card p-6">
+                <h3 className="text-sm text-fg-subtle uppercase tracking-widest" style={{ fontFamily: "var(--font-mono)" }}>
+                  {group}
+                </h3>
+                <ul className="mt-4 flex flex-wrap gap-2">
+                  {items.map((item) => (
+                    <li
+                      key={item}
+                      className="rounded-full border border-border px-3 py-1 text-sm text-fg"
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <div className="shell"><div className="divider" /></div>
+
+      {/* Experience */}
+      <section className="py-16 md:py-24">
+        <div className="shell grid gap-12 md:grid-cols-12">
+          <div className="md:col-span-4">
+            <span className="eyebrow">04 — Experience</span>
+            <h2 className="display mt-4 text-3xl md:text-4xl">
+              Where I&rsquo;ve <span className="italic text-accent">worked.</span>
+            </h2>
+          </div>
+          <div className="md:col-span-8 space-y-6">
+            {experience.map((job) => (
+              <article key={job.company} className="card p-6 md:p-8">
+                <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
+                  <div>
+                    <h3 className="text-xl md:text-2xl font-medium">
+                      {job.role}{" "}
+                      <span className="text-fg-subtle">/</span>{" "}
+                      <span className="text-accent">{job.company}</span>
+                    </h3>
+                  </div>
+                  <div
+                    className="text-sm text-fg-muted"
+                    style={{ fontFamily: "var(--font-mono)" }}
+                  >
+                    {job.period} · {job.location}
+                  </div>
+                </div>
+                <p className="mt-4 text-fg-muted">{job.summary}</p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {job.tags.map((t) => (
+                    <span
+                      key={t}
+                      className="rounded-full border border-border px-2.5 py-1 text-[11px] text-fg-muted"
+                      style={{ fontFamily: "var(--font-mono)" }}
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </article>
+            ))}
+
+            <article className="card p-6 md:p-8">
+              <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
+                <h3 className="text-xl md:text-2xl font-medium">
+                  BSc, Computer Science{" "}
+                  <span className="text-fg-subtle">/</span>{" "}
+                  <span className="text-accent">University of Ilorin</span>
+                </h3>
+                <div
+                  className="text-sm text-fg-muted"
+                  style={{ fontFamily: "var(--font-mono)" }}
+                >
+                  2018 — 2023 · Ilorin, NG
+                </div>
+              </div>
+              <p className="mt-4 text-fg-muted">
+                Graduated with honors. Focus on software engineering, web and
+                app development.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <div className="shell"><div className="divider" /></div>
+
+      {/* Elsewhere */}
+      <section className="py-16 md:py-24">
+        <div className="shell grid gap-12 md:grid-cols-12 md:items-center">
+          <div className="md:col-span-6">
+            <span className="eyebrow">05 — Elsewhere</span>
+            <h2 className="display mt-4 text-3xl md:text-5xl">
+              Say <span className="italic text-accent">hello</span> —
+            </h2>
+          </div>
+          <div className="md:col-span-6 flex flex-col divide-y divide-border border-y border-border">
+            {[
+              { label: "Email", value: "boluwatifeosineye26@gmail.com", href: "mailto:boluwatifeosineye26@gmail.com" },
+              { label: "GitHub", value: "@heistifeh", href: "https://github.com/heistifeh" },
+              { label: "LinkedIn", value: "Boluwatife Osineye", href: "https://www.linkedin.com/in/boluwatife-osineye-43b628269" },
+              { label: "X", value: "@tifethedev", href: "https://x.com/tifethedev" },
+            ].map((item) => (
+              <Link
+                key={item.label}
+                href={item.href}
+                target="_blank"
+                className="group flex items-center justify-between py-4"
+              >
+                <span
+                  className="text-sm text-fg-subtle uppercase tracking-widest"
+                  style={{ fontFamily: "var(--font-mono)" }}
+                >
+                  {item.label}
+                </span>
+                <span className="flex items-center gap-3 text-lg text-fg group-hover:text-accent">
+                  {item.value}
+                  <HiArrowUpRight className="text-sm transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <ContactCTA />
+    </>
+  );
+}
